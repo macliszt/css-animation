@@ -1,0 +1,322 @@
+/* body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+
+}
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(#f00 rgba(0,0,0,0.5)), url(../img/benz41.jpg);
+    background-blend-mode: multiply;
+}
+section::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(rgba(255,0,0,0.75), transparent, transparent);
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(rgba(255,0,0,0.75), transparent, transparent);
+}
+
+section::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(rgba(255,0,0,0.75), transparent, transparent);
+}
+
+ */
+
+
+
+ *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #efefef;
+    font-size: 15px;
+    color: #777;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+.nav-bar{
+    display: block;
+    margin-bottom: 15px 0;
+    background: #03a9f4;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+.nav-bar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+
+}
+.nav-bar li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    color: #def1f0;
+}
+
+.nav-bar li a{
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #def1f0;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.nav-bar li:hover ul.dropdown
+{
+    display: block;
+}
+.nav-bar li ul.dropdown 
+{
+    position: absolute;
+    display: none;
+    width: 200px;
+    background: #298089;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    padding-top: 0;
+}
+.nav-bar li ul.dropdown li{
+    display: block;
+    list-style-type: none; 
+}
+.nav-bar li ul.dropdown li a{
+    padding: 15px 20px;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+    font-weight: 400;
+}
+
+.nav-bar li ul.dropdown li:last-child a{border-bottom: none;}
+
+.nav-bar li:hover a{
+    background: #298089;
+    color: white !important;
+}
+.nav-bar li:first-child:hover a{ border-radius: 3px 0 0 3px;}
+
+.nav-bar li ul.dropdown li:hover a{background: rgba(0,0,0,0.1);}
+
+.nav-bar li ul.dropdown li:first-child:hover a{ border-radius: 0; }
+
+.nav-bar li:hover .arrow-down{border-top: 5px solid #fff; }
+
+.arrow-down
+{
+    width: 0;
+    height: 0;
+    border-left: solid transparent;
+    border-right: solid transparent;
+    border-top: 5px solid #def1f0;
+    top: 15px;
+    position: relative;
+    right: -5px ;
+    content: '';
+}
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    
+.nav-bar
+    {
+       background: white;
+       width: 200px;
+       height: 100%;
+       display: block;
+       position: fixed;
+       left: -200px;
+    }
+.nav-bar.visible
+    {
+        left: 0px;
+        transition: left 0.3s ease;
+    }
+.nav-mobile
+    {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        margin: 0;
+        top: 0px;
+        left: 0px;
+        background: #03A9F4 ;
+        padding: 12px 0 0 10px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    }
+.menu-icon
+    {
+        cursor: pointer;
+    }
+.menu-icon span 
+    {
+        height: 2px;
+        background: #fff;
+        margin: 5px;
+        display: block;
+        width: 20px;
+    }
+.nav-bar ul { padding-top: 50px;}
+
+.nav-bar li {display: block;}
+
+.nav-bar li a 
+    {
+        display: block;
+        color: #505050;
+        font-weight: 600;
+    }
+.nav-bar li:first-child:hover a { border-right: 0;}
+
+       .nav-bar li ul.dropdown {position: relative;}
+
+        .nav-bar li ul.dropdown li a
+        {
+            background: #298089 !important;
+            border-bottom: none;
+            color: #fff !important;
+        }
+
+.nav-barli:hover a
+        {
+            background:#03a9f4 ;
+            color: #fff !important;
+        }
+.nav-bar li ul.dropdown li:hover a
+        {
+            background:  rgba(0,0,0,0.1) !important; 
+            color: #fff !important;
+        }
+.nav-bar li ul.dropdown li a
+        {
+            padding: 10px 10px 10px 30px;
+        }
+.nav-bar li:hover .arrow-down{border-top: 5px solid #fff; }
+
+.arrow-down
+{
+    border-top: 5px solid #505050;
+    top: 20px;
+    position: absolute;
+    right: 10px ;
+}
+}
+
+
+/* ***************************************************************************** */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    height: 100vh;
+    background-image:  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/benz71.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 70px;
+    font-size: 45px;
+    letter-spacing: 2px;
+}
+
+span{
+    color: #f44336;
+}
+
+.search-field
+{
+    height: 50px;
+    padding: 10px;
+}
+.skills{
+    width: 400px;
+}
+.location{
+    width: 200px;
+}
+
+.search-btn{
+    height: 50px;
+    width: 150px;
+    background: #f44336;
+    border: none;
+    color: #fff;
+}
+
+.search-btn:hover{
+    background: #bb0d00;
+    cursor: pointer;
+}
+
+.form-box
+{
+    background: rgba(255, 255, 255, 0.5);
+    padding: 30px 50px;
+}
+.container{
+    background-color: rgb(9, 9, 29);
+}
+
+
+
+
+
+
+ 
